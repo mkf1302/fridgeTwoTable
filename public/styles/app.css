@@ -1,0 +1,460 @@
+/**----------------------------General-------------------------*/
+button {
+  border-radius: 10px;
+}
+
+input {
+  text-align: center;
+}
+
+input:focus, input:active {
+  outline: none;
+}
+
+.mainWrapper {
+  background-color: #a7e7ed;
+  color: #0a0a0a;
+  height: 100%;
+  margin: 0px;
+}
+
+
+/**----------------------------Page Header-------------------------*/
+.logoTitle {
+  height: 80%;
+  width: auto;
+  fill: #ffffff;
+}
+
+.titleRow {
+  height: 120px;
+  border-bottom: 10px double #ee8586;
+  background-image: url("/images/PNG/frenchstucco.png")
+}
+
+.favsRow {
+  background-color: #ffffff;
+  padding-bottom: 50px;
+}
+
+#userName {
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.right {
+  float: right;
+}
+
+
+
+
+/**--------------------Ingredients Section--------------------------*/
+
+.stepText {
+  margin: 10px 0px;
+}
+
+.tableHead {
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 1.2em;
+}
+
+.newIngredient {
+  margin: 5px auto 20px;
+  padding: 2px 2px;
+}
+
+.addIngredient {
+  background-color: #ffffff;
+  margin: 5px 10px 20px 15px;
+  border: 2px outset #ffffff;
+  padding: 2px 10px;
+  color: #a7e7ed;
+  transition: color 1s;
+}
+
+.addIngredient:hover {
+  color: #ee8586;
+}
+
+.addIngredient:active {
+  border: 2px inset #ffffff;
+}
+
+.ingredient {
+  display: inline-block;
+}
+
+p.ingredient {
+  font-size: 1.2em;
+}
+
+.ingredientHeader {
+  margin-left: 10px;
+  font-size: 1.1em
+}
+
+.ingredientHeader2 {
+  margin-left: 11px;
+  font-size: 1.1em;
+}
+
+.pieHeader {
+  margin-left: 5px;
+  font-size: 1.1em;
+}
+
+.useIngredient {
+  display: inline-block;
+  transition: color 0.5s;
+  padding: 5px 10px;
+}
+
+.useIngredient:hover {
+  color: #ee8586;
+}
+
+.removeIngredient {
+  display: inline-block;
+  color: #a7e7ed;
+  transition: color 0.5s;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  border: 0px;
+}
+
+.removeIngredient:hover {
+  color: #ee8586
+}
+
+.popPercent {
+  display: inline-block;
+  padding: 5px;
+}
+
+.used {
+  background-color: #ee8586;
+  border-color: #a7e7ed;
+  color: #a7e7ed;
+}
+
+.used:hover {
+  color: #a7e7ed;
+}
+
+.notused {
+  background-color: white;
+  border-color: #a7e7ed;
+  color: #a7e7ed;
+}
+
+
+
+
+/**-----------------RECIPE RESULTS SECTION------------------------*/
+
+.recipeDropDown {
+  margin-bottom: 50px;
+}
+
+.getRecipes {
+  background-color: #ee8586;
+  margin: 5px 10px 20px 0px;
+  border: 2px outset #ee8586;
+  padding: 2px 10px;
+  color: #ffffff;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.getRecipes:hover {
+  color: #ee8586;
+  background-color: #ffffff;
+}
+
+.apiRecipe {
+   width: 46%;
+   border: 5px solid #ffffff;
+   border-radius: 20px 20px 0px 20px;
+   display: inline-block;
+   margin: 1%;
+   overflow: hidden;
+   position: relative;
+   background-color: #ffffff;
+   color: #0a0a0a;
+  }
+
+  .labelRow {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 35px;
+    font-size: 1em;
+  }
+
+  .labelColumn {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px;
+    padding: 0px;
+    width: 70%;
+    display: inline-block;
+  }
+
+  .buttonColumn {
+    padding: 0px;
+    margin: 0px;
+    width: 20%;
+    float:left;
+  }
+
+  .recipeLabel {
+    display: inline-block;
+    font-size: 1em;
+    margin: 0px 10px 0px 0px;
+    padding: 5px 0px 0px;
+  }
+
+  .recipeImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding-bottom: 5px;
+    filter: none;
+    transition: filter 1s;
+  }
+
+  .recipeImg:hover {
+    filter: brightness(120%) contrast(80%) saturate(110%) opacity(80%);
+  }
+
+  .saveRecipe {
+    margin: 0px;
+    padding: 5px 10px;
+    border-radius: 5px 5px 0px 15px;
+  }
+
+  .saved {
+    background-color: #a7e7ed;
+    border: 2px solid #ee8586;
+    color: #ee8586;
+  }
+
+  .saveHeart {
+    text-shadow:
+      0px -1px 0px #ee8586,
+      -1px 0px 0px #ee8586,
+      0px 1px 0px #ee8586,
+      1px 0px 0px #ee8586;
+  }
+
+  .notsaved {
+    background-color: #ffffff;
+    border: 2px solid #ee8586;
+    color: #ffffff;
+    transition: background-color 0.75s;
+  }
+
+  .notsaved:hover {
+    background-color: #a7e7ed;
+  }
+
+
+
+
+
+  
+/**-----------Favorites Section------------------*/
+
+.favsRow {
+  border-top: 7px double #ee8586; 
+}
+
+.favsTitle, .savedDetails {
+  margin-left: 15px;
+}
+
+.storeRecipes {
+  background-color: #ee8586;
+  margin: 5px 10px 20px 0px;
+  border: 2px outset #ee8586;
+  padding: 2px 10px;
+  color: #ffffff;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.storeRecipes:hover {
+  color: #ee8586;
+  background-color: #ffffff;
+}
+
+.spacer {
+  color: #ffffff;
+}
+
+.openSavedRecipe {
+  display: block;
+  padding: 15px;
+  border-radius: 10px 10px 10px 0px;
+  border: 3px outset #a7e7ed;
+  font-size: 1.5em;
+  color: #a7e7ed;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.openSavedRecipe:hover {
+  background-color: #a7e7ed;
+  color: #ffffff;
+}
+
+.openSavedRecipe:active {
+  border: 3px inset #a7e7ed;
+}
+
+.removeRecipe {
+  display: block;
+  padding: 15px;
+  border-radius: 10px 10px 10px 0px;
+  border: 3px outset #ee8586;
+  font-size: 1.5em;
+  color: #ee8586;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.removeRecipe:hover {
+  background-color: #ee8586;
+  color: #ffffff;
+}
+
+.removeRecipe:active {
+  border: 3px inset #ee8586;
+}
+
+.imgWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 5px solid #0a0a0a;
+  border-radius: 20px 20px 20px 0px;
+}
+
+.savedImg {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 1s;
+}
+
+.savedImg:hover {
+  filter: none;
+}
+
+
+
+
+/**------------------Modal Section---------------------*/
+
+.modal-content {
+  background-color: #59656f;
+  color: #ffffff;
+}
+
+.modal-header {
+  border-bottom: 0px;
+}
+
+.modal-section2 {
+  margin-top: 15px;
+}
+
+.close span {
+  color: #ffffff;
+  font-size: 1.5em;
+  text-shadow: none;
+  transition: color 0.5s;
+}
+
+.close span:hover {
+  color: #ee8586
+}
+
+.modal-recipe {
+  border: 2px outset #a7e7ed;
+  border-radius: 10px 10px 0px 10px;
+  background-color: #ffffff;
+  color: #59656f;
+  transition: background-color 0.75s;
+}
+
+.modal-recipe:hover {
+  background-color: #a7e7ed;
+  color: #59656f;
+  border-color: #a7e7ed;
+}
+
+.modal-recipe:active {
+  border: 2px inset #a7e7ed;
+  background-color: #a7e7ed;
+  color: #59656f;
+}
+
+.modal-close {
+  border: 2px outset #ee8586;
+  border-radius: 10px 10px 0px 10px;
+  background-color: #ffffff;
+  color: #59656f;
+  transition: background-color 0.75s, color 0.75s;
+}
+
+.modal-close:hover {
+  background-color: #ee8586;
+  color: #ffffff;
+  border-color: #ee8586;
+}
+
+.modal-close:active {
+  border: 2px inset #ee8586;
+  background-color: #ee8586;
+  color: #ffffff;
+}
+
+.modalimgWrapper {
+  height: 200px;
+  width: 75%;
+  overflow: hidden;
+  border: 5px solid #ffffff;
+  border-radius: 20px 20px 0px 20px;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+}
+
+.found {
+  color: #a7e7ed;
+}
+
+/* .row {
+  border: 1px solid black;
+} */
+
+/* .col-md-4, .col-md-8, .col-12, .col-8, .col-2, .col-sm-4, .col-sm-8 {
+  border: 1px solid black;
+} */
+  
+
+
+
+
+
+
+  

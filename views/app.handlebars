@@ -1,0 +1,199 @@
+{{!--This is the modal that pops when you click on a recipe--}}
+<div class="modal fade" id="recipeModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+
+            <div class="modalimgWrapper">
+                <img class="modal-image" src="">
+            </div>
+
+            <div class="modal-body">
+                <details>
+                    <summary> Ingredients </summary>
+                    <p class="modal-ingredients"></p>
+                </details>
+
+                <details>
+                    <summary class="modal-section2"> Calories, Cooking Time </summary>
+                    <li class="modal-calories"></li>
+                    <li class="modal-time"></li>
+                </details>                
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary modal-recipe"  data-dismiss="modal">Make This Recipe</button>
+                <button type="button" class="btn btn-secondary modal-close" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid mainWrapper">
+
+    {{!--Page Header--}}
+    <div class="row titleRow">
+        <div class="col-md-12">
+                <img class="logoTitle" src="/images/PNG/logo.png">
+                <p id="userName" data-userid="{{userID}}">Welcome, {{user}}!  Make something new.</p>
+        </div>
+    </div>      
+
+    {{!--Step 1 and Step 2--}}
+    <div class="row">
+
+        {{!--Step 1--}}
+        <div class="col-md-4 step1">
+            <p class="stepText">Step 1. Add and mark the ingredients you have.</p>
+
+            {{!--Step 1 Sub Row Add Ingredients--}}
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" class="newIngredient" placeholder="Add Ingredient">
+                    <button type="button" class="addIngredient"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            {{!--Step 1 Sub Row Popular Ingredient Title--}}
+            <div class="row tableHead">
+                <div class="col-8">
+                    <p class="description">Popular Ingredients</p>
+                </div>
+                <div class="col-2">
+                    <p class="ingredientHeader"><i class="fas fa-check"></i></p>
+                </div>
+                <div class="col-2">
+                    <p><i class="fas fa-chart-pie pieHeader"></i></p>
+                </div>
+            </div>
+
+            {{!--Step 1 Sub Rows for Each Popular Ingredient--}}
+            {{#each Popular}}
+                <div class="row">
+                    <div class="col-8">
+                        <p class="ingredient" data-id={{label}}>  {{label}}  </p>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" data-use="false" class="useIngredient notused {{label}}"><i class="fas fa-check"></i></button>
+                    </div>
+                    <div class="col-2">
+                        <p class="popPercent">{{percent}}</p>
+                    </div>
+                    
+                </div>
+            {{/each}}
+
+            <br>
+            {{!--Step 1 Sub Row Custom Ingredient Title--}}
+            <div class="row tableHead">
+                <div class="col-8">
+                    <p class="description">Custom Ingredients</p>
+                </div>
+                <div class="col-2">
+                    <p class="ingredientHeader"><i class="fas fa-check"></i></p>
+                </div>
+                <div class="col-2">
+                    <p class="ingredientHeader2"><i class="fas fa-trash"></i></p>
+                </div>
+            </div>   
+            
+            {{!--Step 1 Sub Rows for each Custom Ingredient--}}
+            {{#each Ingredient}}
+                <div class="row">
+                    <div class="col-8">
+                        <p class="ingredient" data-id={{id}} id={{id}}>{{label}}</p>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" data-use="{{used}}" class="useIngredient notused {{id}}"><i class="fas fa-check"></i></button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" data-remove="{{id}}" class="removeIngredient"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+
+        {{!--Step 2--}}
+        <div class="col-md-8 step2">
+            <p class="stepText">Step 2. Get the recipes.</p>
+            <button class="getRecipes">Get Recipes</button>
+            <div class="container" id="recipeResults"></div>
+        </div>
+
+    </div>
+
+    <div class="row favsRow">
+        <div class="col-12 favoriteRecipes">
+            
+            <div class="row">
+                <div class="col-12">
+                    <br>
+
+                    <div class="favsTitle">
+                        <p>Step 3. Cook the recipe or save it for later!</p><button class="storeRecipes">Store Recipes</button>
+                        <p class="storeError"></p>
+                    </div>
+                    
+
+                    <br>
+                </div>
+                
+            </div>
+
+            <details class="savedDetails">
+                <summary class="right recipeDropDown">Your Favorite Recipes</summary>
+
+                <div class="row"><p class="spacer">------------------------------</p> </div>
+                
+                {{#each Recipe}}
+
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 data-id={{id}}>{{label}}</h5>
+                        </div>
+                        <div class="col-2 flexColumn">
+                            <p>Open</p>
+                        </div>
+                        <div class="col-2 flexColumn">
+                            <p>Remove</p>
+                        </div>
+                        <div class="col-2 emptyFlexColumn"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="imgWrapper">
+                                 <img class="savedImg" data-id="{{id}}" src="{{image}}">
+                            </div>
+
+                        </div>
+                        <div class="col-2 flexColumn">
+                            <button type="button" class="openSavedRecipe" data-id="{{id}}" data-src="{{url}}" data-calories="{{calories}}" data-time="{{time}}" data-servings="{{servings}}"><i class="fas fa-box-open"></i></button>
+                        </div>
+                        <div class="col-2 flexColumn">
+                            <button type="button" data-remove="{{id}}" class="removeRecipe"><i class="fas fa-trash"></i></button>
+                        </div>
+                        <div class="col-2 emptyFlexColumnm"></div>
+                    </div>
+                {{/each}}
+            </details>
+        
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <p>This app was designed by Kyle Rosenmeyer, Bobby Timmons, and Mike Flores.</p>
+    <p>All Rights Reserved.</p>
+</footer>
+
+
+
+
+  

@@ -1,0 +1,45 @@
+.paperBack {
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+  background: url("../images/creased-crinkled-crumpled-479444.jpg") no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.error404Path {
+  stroke: black;
+  stroke-width: 0.1em;
+  stroke-opacity: 0;
+  fill-opacity: 0;
+}
+
+.errorbod {
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+  background: url("../images/creased-crinkled-crumpled-479444.jpg") no-repeat center center fixed;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* .f2tErrorR1 {
+  position: relative;
+  z-index: 1;
+} 
+
+.f2tErrorR2 {
+  position: relative;
+  z-index: 2;
+  margin-top: -140px;
+}
+
+.f2tErrorR3 {
+  position: relative;
+  padding-left: 28%;
+  z-index: 3;
+  margin-top: -75px;
+} */
+
